@@ -49,7 +49,7 @@ void DriveSubsystem::RobotInit()
     m_robotDrive->SetInvertedMotor(frc::RobotDrive::kRearRightMotor, c_krrmotor_inversed);
 
     try {
-    	m_ahrs = new AHRS(SPI::kMXP);
+    	m_ahrs = new AHRS(SerialPort::Port::kUSB);
         DriverStation::ReportError("NavX FOUND");
         m_ahrs->Reset();
         if (m_ahrs->IsCalibrating()) {
